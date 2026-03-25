@@ -13,5 +13,11 @@
             <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         </propeties>
 
-        
+        <dependency>
+            <dependency>
+                <groupID>jakarta.ws.rs</groupID>
+                <artifactID>jakarta.ws.rs-api</artifactID>
+                <version>3.1.0</version>
+            </dependency>
+        </dependency>
 </project>
