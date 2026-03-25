@@ -1,37 +1,37 @@
 <project xmlns = "http://maven.apache.org/POM/4.0.0"
-         xmlns:xsl="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0<modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-        <groupID>uk.ac.westminster</groupID>
-        <artifactID>smart-campus</artifactID>
+        <groupId>uk.ac.westminster</groupId>
+        <artifactId>smart-campus</artifactId>
         <version>1.0-SNAPSHOT</version>
 
-        <propeties>
+        <properties>
             <maven.compiler.source>17</maven.compiler.source>
             <maven.compiler.target>17</maven.compiler.target>
             <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        </propeties>
+        </properties>
 
         <dependencies>
             <dependency>
-                <groupID>jakarta.ws.rs</groupID>
-                <artifactID>jakarta.ws.rs-api</artifactID>
+                <groupId>jakarta.ws.rs</groupId>
+                <artifactId>jakarta.ws.rs-api</artifactId>
                 <version>3.1.0</version>
             </dependency>
             <dependency>
-                <groupID>org.glassfish.jersey.containers</groupID>
-                <artifactID>jersey-container-grizzly2-http</artifactID>
+                <groupId>org.glassfish.jersey.containers</groupId>
+                <artifactId>jersey-container-grizzly2-http</artifactId>
                 <version>3.1.3</version>
             </dependency>
             <dependency>
-                <groupID>org.glassfish.jersey.inject</groupID>
-                <artifactID>jersey-hk2</artifactID>
+                <groupId>org.glassfish.jersey.inject</groupId>
+                <artifactId>jersey-hk2</artifactId>
                 <version>3.1.3</version>
             </dependency>
             <dependency>
-                <groupID>org.glassfish.jersey.media</groupID>
-                <artifactID>jersey-media-json-binding</artifactID>
+                <groupId>org.glassfish.jersey.media</groupId>
+                <artifactId>jersey-media-json-binding</artifactId>
                 <version>3.1.3</version>
             </dependency>
         </dependencies>
