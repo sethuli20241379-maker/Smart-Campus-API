@@ -20,5 +20,6 @@ Because the server handles many requests simultaneously using different threads,
 create a room at the same, both of them modifying the static Map at the same time, it leads to data corruption or a race condition. To prevent this, you can 
 synchronise access to the in-memory structures. 
 
-You can do this by using java.util.concurrent.ConcurrentHashMap instead of a regular HashMap. This allows safe concurrent access. You can also use synchronised 
-blocks or Collections.synchronizedList() when performing List operations. This ensures that only one thread can modify the collection at a time.
+You can do this by using java.util.concurrent.ConcurrentHashMap instead of a regular HashMap. This allows safe concurrent 
+access. You can also use synchronised blocks or Collections.synchronizedList() when performing List operations. This 
+ensures that only one thread can modify the collection at a time.
