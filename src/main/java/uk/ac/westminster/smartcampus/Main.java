@@ -11,7 +11,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        final ResourceConfig rc = new ResourceConfig().packages("uk.ac.westminster.smartcampus");
+        final ResourceConfig rc = new ResourceConfig()
+                .packages("uk.ac.westminster.smartcampus")
+                .register(org.glassfish.jersey.jsonb.JsonBindingFeature.class);
 
         final HttpServer server = GrizzlyHttpServerFactory.createHttpServer(URI.create(BASE_URI), rc);
 
