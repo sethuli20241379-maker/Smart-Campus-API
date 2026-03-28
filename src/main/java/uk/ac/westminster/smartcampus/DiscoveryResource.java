@@ -8,5 +8,8 @@ import javax.ws.rs.core.Response;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+@Path("/")
 public class DiscoveryResource {
+
+    
 }
