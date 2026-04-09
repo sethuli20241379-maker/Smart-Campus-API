@@ -45,7 +45,7 @@ public class RoomResource {
     public Response deleteRoom(@PathParam("roomId") String roomId) {
         Room room = rooms.get(roomId);
 
-        if (room = null) {
+        if (room == null) {
             return Response.status(Response.Status.NOT_FOUND)
                     .entity("Error: Room with ID " + roomId + "does not exist")
                     .build();
