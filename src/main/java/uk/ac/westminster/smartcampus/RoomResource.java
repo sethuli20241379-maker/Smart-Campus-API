@@ -57,6 +57,10 @@ public class RoomResource {
                     .build();
         }
 
+        public static Map<String, Room> getRoomsMap() {
+            return rooms;
+        }
+
         rooms.remove(roomId);
 
         return Response.noContent().build();
