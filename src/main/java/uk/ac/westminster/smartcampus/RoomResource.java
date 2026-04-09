@@ -39,4 +39,26 @@ public class RoomResource {
         }
         return Response.ok(room).build();
     }
+
+    @DELETE
+    @Path("/{roomId}")
+    public Response deleteRoom(@PathParam("roomId") String roomId) {
+        Room room = rooms.get(roomId);
+
+        if (room = null) {
+            return Response.status(Response.Status.NOT_FOUND)
+                    .entity("Error: Room with ID " + roomId + "does not exist")
+                    .build();
+        }
+
+        if (room.getSensorIds() != null && !room.getSensorIds().isEmpty()) {
+            return Response.status(Response.Status.CONFLICT)
+                    .entity("Deletion Blocked: Room contains active sensors. Remove sensors before decommissioning.")
+                    .build();
+        }
+
+        rooms.remove(roomId);
+
+        return Response.noContent().build();
+    }
 }
