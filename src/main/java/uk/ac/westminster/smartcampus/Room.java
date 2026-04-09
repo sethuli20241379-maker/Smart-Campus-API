@@ -26,5 +26,6 @@ public class Room {
     public int getCapacity() { return capacity;}
     public void setCapacity(int capacity) { this.capacity = capacity; }
 
-    
+    public List<String> getSensorIds() { return sensorIds;}
+    public void setSensorIds(List<String> sensorIds) { this.sensorIds = sensorIds; }
 }
