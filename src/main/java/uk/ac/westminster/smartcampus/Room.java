@@ -16,4 +16,9 @@ public class Room {
         this.name = name;
         this.capacity = capacity;
     }
+
+    public String getId() { return id; }
+    public void setID(String id) { this.id = id;}
+
+    
 }
