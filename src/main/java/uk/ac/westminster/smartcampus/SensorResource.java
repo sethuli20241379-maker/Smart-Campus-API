@@ -34,6 +34,24 @@ public class SensorResource {
         return Response.status(Response.Status.CREATED).entity(sensor).build();
     }
 
+    @PUT
+    @Path("/{sensorId}")
+    public Response updateSensorValue(@PathParam("sensorId") String sensorId, Sensor updatedSensor) {
+
+        Sensor existingSensor = sensors.get(sensorId);
+
+        if (existingSensor == null) {
+            return Response.status(Response.Status.NOT_FOUND)
+                    .entity("Error: Sensor with ID " + sensorId + " not found.")
+                    .build();
+        }
+
+        existingSensor.setCurrentValue(updatedSensor.getCurrentValue());
+        existingSensor.setStatus(updatedSensor.getStatus());
+
+        return Response.ok(existingSensor).build();
+    }
+
     public static Map<String, Sensor> getSensorsMap() {
         return sensors;
     }
