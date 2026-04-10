@@ -16,6 +16,21 @@ public class SensorResource {
 
     private static final Map<String, Sensor> sensors = new ConcurrentHashMap<>();
 
+    @GET
+    public Response getSensor(@QueryParam("type") String type) {
+        List<Sensor> sensorList = new ArrayList<>(sensors.values());
+
+        if (type == null || type.isEmpty()) {
+            return Response.ok(sensorList).build();
+        }
+
+        List<Sensor> filtered = sensorList.stream()
+                .filter(s -> type.equalsIgnoreCase(s.getType()))
+                .collect(Collectors.toList());
+
+        return Response.ok(filtered).build();
+    }
+
     @POST
     public Response registerSensor(Sensor sensor) {
 
