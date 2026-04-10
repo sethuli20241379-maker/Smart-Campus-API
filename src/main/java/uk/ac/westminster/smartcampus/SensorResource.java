@@ -34,7 +34,7 @@ public class SensorResource {
         return Response.status(Response.Status.CREATED).entity(sensor).build();
     }
 
-    public static Map<String, Sensor> getSensorMap() {
+    public static Map<String, Sensor> getSensorsMap() {
         return sensors;
     }
 }
