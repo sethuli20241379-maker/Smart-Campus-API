@@ -70,6 +70,16 @@ public class SensorResource {
         return Response.ok(existingSensor).build();
     }
 
+    @Path("/{sensorId}/readings")
+    public SensorReadingResource getSensorReadingResource(@PathParam("sensorId") String sensorId) {
+
+        if (!sensors.containsKey(sensorId)) {
+            throw new NotFoundException("Sensor not found");
+        }
+
+        return new SensorReadingResource(sensorId);
+    }
+    
     public static Map<String, Sensor> getSensorsMap() {
         return sensors;
     }
