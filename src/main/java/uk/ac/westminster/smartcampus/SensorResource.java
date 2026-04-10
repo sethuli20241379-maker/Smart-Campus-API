@@ -30,7 +30,7 @@ public class SensorResource {
         Room parentRoom = RoomResource.getRoomsMap().get(sensor.getRoomId());
         parentRoom.getSensorIds().add(sensor.getId());
 
-        sensor.put(sensor.getId(), sensor);
+        sensors.put(sensor.getId(), sensor);
         return Response.status(Response.Status.CREATED).entity(sensor).build();
     }
 
