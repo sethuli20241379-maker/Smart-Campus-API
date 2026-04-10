@@ -26,5 +26,15 @@ public class SensorResource {
                     .entity("Error: The specified Room ID(" + sensor.getRoomId() + ") does not exist.")
                     .build();
         }
+
+        Room parentRoom = RoomResource.getRoomsMap().get(sensor.getRoomId());
+        parentRoom.getSensorIds().add(sensor.getId());
+
+        sensor.put(sensor.getId(), sensor);
+        return Response.status(Response.Status.CREATED).entity(sensor).build();
+    }
+
+    public static Map<String, Sensor> getSensorMap() {
+        return sensors;
     }
 }
