@@ -79,7 +79,7 @@ public class SensorResource {
 
         return new SensorReadingResource(sensorId);
     }
-    
+
     public static Map<String, Sensor> getSensorsMap() {
         return sensors;
     }
