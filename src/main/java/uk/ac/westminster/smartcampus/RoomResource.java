@@ -50,9 +50,8 @@ public class RoomResource {
         }
 
         if (room.getSensorIds() != null && !room.getSensorIds().isEmpty()) {
-            return Response.status(Response.Status.CONFLICT)
-                    .entity("Deletion Blocked: Room contains active sensors. Remove sensors before decommissioning.")
-                    .build();
+
+            throw new RoomNotEmptyException("Deletion Blocked: Room is currently occupied by active hardware.");
         }
 
         rooms.remove(roomId);
