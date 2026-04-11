@@ -46,9 +46,7 @@ public class RoomResource {
         Room room = rooms.get(roomId);
 
         if (room == null) {
-            return Response.status(Response.Status.NOT_FOUND)
-                    .entity("Error: Room with ID " + roomId + "does not exist")
-                    .build();
+            return Response.status(Response.Status.NOT_FOUND).build();
         }
 
         if (room.getSensorIds() != null && !room.getSensorIds().isEmpty()) {
