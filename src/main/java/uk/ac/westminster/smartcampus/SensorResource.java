@@ -40,9 +40,8 @@ public class SensorResource {
         }
 
         if (!RoomResource.getRoomsMap().containsKey(sensor.getRoomId())) {
-            return Response.status(Response.Status.BAD_REQUEST)
-                    .entity("Error: The specified Room ID(" + sensor.getRoomId() + ") does not exist.")
-                    .build();
+
+            throw new LinkedResourceNotFoundException("Validation Failed: The Room ID '" + sensor.getRoomId() + "' does not exist.");
         }
 
         Room parentRoom = RoomResource.getRoomsMap().get(sensor.getRoomId());
