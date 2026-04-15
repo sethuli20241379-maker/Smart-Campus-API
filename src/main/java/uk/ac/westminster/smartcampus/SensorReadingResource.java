@@ -28,9 +28,14 @@ public class SensorReadingResource {
 
     @POST
     public Response addReading(SensorReading reading) {
-        history.computeIfAbsent(sensorId, k -> new ArrayList<>()).add(reading);
 
         Sensor parentSensor = SensorResource.getSensorsMap().get(sensorId);
+
+        if (parentSensor != null && "MAINTENANCE".equalsIgnoreCase(parentSensor.getStatus())) {
+            throw new SensorUnavailableException("Access Denied: Sensor '" + sensorId + "' is under maintenance and cannot accept readings.");
+        }
+
+        history.computeIfAbsent(sensorId, k -> new ArrayList<>()).add(reading);
 
         if (parentSensor != null) {
             parentSensor.setCurrentValue(reading.getValue());
