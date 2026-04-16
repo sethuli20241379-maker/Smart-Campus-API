@@ -133,15 +133,34 @@ What happens if a client send data in a different format than @Consumes(MediaTyp
 
 #### _Answer:_
 
-The @Consumes(MediaType.APPLICATION_JSON) annotation specifies that the endpoint only accepts requests with a JSON payload, meaning the server expects the request body to be in JSON format and the Content-Type header to be Content-Type: application/json.
+The @Consumes(MediaType.APPLICATION_JSON) annotation specifies that the endpoint only accepts requests with a JSON payload, meaning the server expects 
+the request body to be in JSON format and the Content-Type header to be Content-Type: application/json.
 
-If a client sends data in a different format (like text/plain or application/xml), JAX-RS performs content negotiation and tries to find an appropriate MessageBodyReader to convert the incoming data into a Java object.
+If a client sends data in a different format (like text/plain or application/xml), JAX-RS performs content negotiation and tries to find an appropriate 
+MessageBodyReader to convert the incoming data into a Java object.
 
-If the client, for example, sends an unsupported media type and no suitable reader if found, JAX-RS automatically returns HTTP 415 Unsupported Media Type. This means that the server refuses to process the request and that the resources method was never executed.
-If the client also, for example, sets malformed or invalid JSON (for example, set Content-Type: application/json but sends invalid JSON), the framework attemtps to parse it and fails, resulting in a HTTP 400 Bad Request. Here, the format is correct, but the content is not parseable. 
+If the client, for example, sends an unsupported media type and no suitable reader if found, JAX-RS automatically returns HTTP 415 Unsupported Media Type. 
+This means that the server refuses to process the request and that the resources method was never executed.
+If the client also, for example, sets malformed or invalid JSON (for example, set Content-Type: application/json but sends invalid JSON), the framework 
+attempts to parse it and fails, resulting in a HTTP 400 Bad Request. Here, the format is correct, but the content is not parseable. 
 
 ### **Part 3 - Task 2 Question**
 
 Filtering using @QueryParam vs Path-based filtering in REST APIs
 
 #### _Answer:_
+Using @QueryParam for filtering aligns better with RESTful design principles. Because of this, it is generally superior to embedding the filter in the URL path.
+Query parameters are specifically intended for filtering, searching and refining collections. Path parameters, on the other hand, are meant to identify 
+specific resources. 
+
+The differences between the two include:
+Flexibility and Scalability:
+Query parameters allow multiple filters easily: /api/v1/sensors?type=CO2&status=ACTIVE while with path-based filtering this may become messy: 
+/api/v1/sensors/type/CO2/status/ACTIVE. It quickly becomes harder to maintain and less readable. 
+Optional Nature:
+Query parameters are naturally optional: /sensors (all sensors) and /sensors?type=CO2 (filtered sensors). With path parameters, you would need separate 
+endpoints or complex routing logic.
+Client-Side Simplicity:
+Clients can easily construct and modify query strings dynamically, making search functionality more convenient. 
+REST Best Practices:
+REST conventions recommend path parameters for resource identification and query parameters for filtering and searching. 
