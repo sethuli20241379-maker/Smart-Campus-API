@@ -79,3 +79,5 @@ Increased Network Bandwidth Usage:
 Larger payload sie, especially if objects contain many fields.
 Over-fetching Data:
 Clients may receive unnecessary information they don't need.
+
+Part 2 - Task 2 Question
