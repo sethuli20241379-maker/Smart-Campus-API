@@ -44,3 +44,38 @@ They do not need to memorise or hardcode endpoints.), improved maintainability (
 even if API structure changes.), simplified navigation (Developers can navigate through resources using links rather than constructing URLs manually, 
 treating the API like a web application.), and better discoverability (New features and endpoints can be introduced without needing immediate client update 
 because they will appear in responses.).
+
+Part 2 - Task 1 Question
+Implications of returning only IDs versus returning full room objects when returning a list of rooms.
+
+When designing a RESTful API, returning either only room IDs or full room objects requires a choice between network efficiency and client convenience. 
+
+Advantages of returning only IDs:
+Reduced Network Bandwidth:
+Because only identifiers are transmitted, the response size is much smaller.
+Faster Response Time:
+Less data being transmitted means quicker transmissions, which is especially beneficial for large datasets.
+Better for Large Collections:
+Scales well when there are many rooms
+
+Disadvantages of returning only IDs:
+Increased Client Requests:
+The client must make additional API calls to fetch full details.
+Higher Latency Overall:
+Multiple round trips can slow down the application.
+More Complex Client Logic:
+The client must handle fetching and handling data.
+
+Advantages of returning full room objects:
+Fewer API Calls:
+All required data is returned in a single request.
+Simpler Client-Side Processing:
+The client can directly use the data without additional requests no data handling.
+Better User Experience:
+Faster rendering in UI applications because data is immediately available.
+
+Disadvantages of returning full room objects:
+Increased Network Bandwidth Usage:
+Larger payload sie, especially if objects contain many fields.
+Over-fetching Data:
+Clients may receive unnecessary information they don't need.
