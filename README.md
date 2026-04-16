@@ -34,3 +34,9 @@ In a HATEOAS-compliant API, the server responses not only contain data, but also
 The server dynamically provides navigation information within each response, meaning that the client is not required to rely on hardcoded URLs or external 
 documentation. For example, a response for a room might include links such as: /api/v1/rooms{id}, /api/v1/rooms/{id}/sensors, or /api/v1/sensors etc. 
 This allows the client to discover available operations at runtime.
+
+HATEOAS maybe considered a hallmark of advanced RESTful design because HATEOAS makes an API self-descriptive (each response explains what can be done next), 
+decoupled (clients do not need to have prior knowledge of endpoint structures) and evolvable (the server can change URLS without breaking clients). 
+These characteristics and allowances align with a core REST principle which is loose coupling between client and server.
+
+
