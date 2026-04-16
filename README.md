@@ -81,3 +81,11 @@ Over-fetching Data:
 Clients may receive unnecessary information they don't need.
 
 Part 2 - Task 2 Question
+Idempotency of the DELETE operation in my implementation and the justification for why.
+
+Yes, the DELETE operation is idempotent in this implementation. This is because making the same DELETE request multiple times results in the same final system 
+state.
+
+An operation is considered idempotent if repeating the same request multiple times produces the same outcome as when it is executed once. 
+In the case of this implementation, the DELETE endpoint follows this principle. 
+
