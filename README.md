@@ -116,3 +116,15 @@ Subsequent DELETE requests:
 
 This confirms idempotency because the system does not change state after the first successful DELETE operation. 
 Repeated DELETE requests do not recreate or modify data. It only returns different responses depending on state. 
+
+Part 3 - Task 1 Question
+What happens if a client send data in a different format than @Consumes(MediaType.APPLICATION_JSON)?
+
+The @Consumes(MediaType.APPLICATION_JSON) annotation specifies that the endpoint only accepts requests with a JSON payload, meaning the server expects the request body to be in JSON format and the Content-Type header to be Content-Type: application/json.
+
+If a client sends data in a different format (like text/plain or application/xml), JAX-RS performs content negotiation and tries to find an appropriate MessageBodyReader to convert the incoming data into a Java object.
+
+If the client, for example, sends an unsupported media type and no suitable reader if found, JAX-RS automatically returns HTTP 415 Unsupported Media Type. This means that the server refuses to process the request and that the resources method was never executed.
+If the client also, for example, sets malformed or invalid JSON (for example, set Content-Type: application/json but sends invalid JSON), the framework attemtps to parse it and fails, resulting in a HTTP 400 Bad Request. Here, the format is correct, but the content is not parseable. 
+
+Part 3 - Task 2 Question
