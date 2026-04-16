@@ -1,10 +1,10 @@
 # Smart-Campus-API
 RESTful API for the University’s "Smart Campus" initiative to manage Rooms and Sensors using JAX-RS. - CSA Coursework
 
-Part 1 - Task 1 Question
+**Part 1 - Task 1 Question**
 Default Lifecycle of a JAX-RS Resource class and in-memory data structures.
 
-Answer:
+_Answer:_
 By default, in JAX-RS, resource classes are request-scoped. This means a new instance is created for each incoming request. This is to maintain the stateless 
 nature of RESTful services, where the server does not store any client related data between requests. Once the request is processed and the response is sent back 
 to the client, the specific instance created for the request is discarded.
@@ -24,10 +24,10 @@ You can do this by using java.util.concurrent.ConcurrentHashMap instead of a reg
 access. You can also use synchronised blocks or Collections.synchronizedList() when performing List operations. This 
 ensures that only one thread can modify the collection at a time.
 
-Part 1 - Task 2 Question
+**Part 1 - Task 2 Question**
 Why Hypermedia (HATEOAS) considered a hallmark of advanced RESTful design and how it benefits client developers.
 
-Answer:
+_Answer:_
 Hypermedia, also known as HATEOAS (Hypermedia As The Engine of Application State), is a key principle of advanced RESTful API design. 
 In a HATEOAS-compliant API, the server responses not only contain data, but also include links to related resources and possible next actions.
 
@@ -45,9 +45,10 @@ even if API structure changes.), simplified navigation (Developers can navigate 
 treating the API like a web application.), and better discoverability (New features and endpoints can be introduced without needing immediate client update 
 because they will appear in responses.).
 
-Part 2 - Task 1 Question
+**Part 2 - Task 1 Question**
 Implications of returning only IDs versus returning full room objects when returning a list of rooms.
 
+_Answer:_
 When designing a RESTful API, returning either only room IDs or full room objects requires a choice between network efficiency and client convenience. 
 
 Advantages of returning only IDs:
@@ -80,9 +81,10 @@ Larger payload sie, especially if objects contain many fields.
 Over-fetching Data:
 Clients may receive unnecessary information they don't need.
 
-Part 2 - Task 2 Question
+**Part 2 - Task 2 Question**
 Idempotency of the DELETE operation in my implementation and the justification for why.
 
+_Answer:_
 Yes, the DELETE operation is idempotent in this implementation. This is because making the same DELETE request multiple times results in the same final system 
 state.
 
@@ -117,9 +119,10 @@ Subsequent DELETE requests:
 This confirms idempotency because the system does not change state after the first successful DELETE operation. 
 Repeated DELETE requests do not recreate or modify data. It only returns different responses depending on state. 
 
-Part 3 - Task 1 Question
+**Part 3 - Task 1 Question**
 What happens if a client send data in a different format than @Consumes(MediaType.APPLICATION_JSON)?
 
+_Answer:_
 The @Consumes(MediaType.APPLICATION_JSON) annotation specifies that the endpoint only accepts requests with a JSON payload, meaning the server expects the request body to be in JSON format and the Content-Type header to be Content-Type: application/json.
 
 If a client sends data in a different format (like text/plain or application/xml), JAX-RS performs content negotiation and tries to find an appropriate MessageBodyReader to convert the incoming data into a Java object.
@@ -127,4 +130,7 @@ If a client sends data in a different format (like text/plain or application/xml
 If the client, for example, sends an unsupported media type and no suitable reader if found, JAX-RS automatically returns HTTP 415 Unsupported Media Type. This means that the server refuses to process the request and that the resources method was never executed.
 If the client also, for example, sets malformed or invalid JSON (for example, set Content-Type: application/json but sends invalid JSON), the framework attemtps to parse it and fails, resulting in a HTTP 400 Bad Request. Here, the format is correct, but the content is not parseable. 
 
-Part 3 - Task 2 Question
+**Part 3 - Task 2 Question**
+Filtering using @QueryParam vs Path-based filtering in REST APIs
+
+_Answer:_
