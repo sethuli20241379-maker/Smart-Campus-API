@@ -89,3 +89,30 @@ state.
 An operation is considered idempotent if repeating the same request multiple times produces the same outcome as when it is executed once. 
 In the case of this implementation, the DELETE endpoint follows this principle. 
 
+Analysis with cases:
+
+Case 1: Room exists and has no sensors
+First DELETE request:
+- Room is removed from the rooms map
+- Response:204 No Content
+Subsequent DELETE requests:
+- Room no longer exists
+- Response: 404 Not Found
+
+Case 2: Room exists but has active sensors:
+First DELETE request:
+- Operation is blocked
+- RoomNotEmptyException is thrown
+- Response: 409 Conflict
+Subsequent DELETE requests:
+- Same validation fails again
+- Same 409 Conflict response returned 
+
+Case 3: Room does not exist:
+First DELETE request:
+- Response: 404 Not Found
+Subsequent DELETE requests:
+- Same 404 ot Found
+
+This confirms idempotency because the system does not change state after the first successful DELETE operation. 
+Repeated DELETE requests do not recreate or modify data. It only returns different responses depending on state. 
