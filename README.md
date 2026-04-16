@@ -25,7 +25,12 @@ access. You can also use synchronised blocks or Collections.synchronizedList() w
 ensures that only one thread can modify the collection at a time.
 
 Part 1 - Task 2 Question
-Why HyperMedia (HATEOAS) considered a hallmark of advanced RESTful design and how it benefits client developers.
+Why Hypermedia (HATEOAS) considered a hallmark of advanced RESTful design and how it benefits client developers.
 
 Answer:
+Hypermedia, also known as HATEOAS (Hypermedia As The Engine of Application State), is a key principle of advanced RESTful API design. 
+In a HATEOAS-compliant API, the server responses not only contain data, but also include links to related resources and possible next actions.
 
+The server dynamically provides navigation information within each response, meaning that the client is not required to rely on hardcoded URLs or external 
+documentation. For example, a response for a room might include links such as: /api/v1/rooms{id}, /api/v1/rooms/{id}/sensors, or /api/v1/sensors etc. 
+This allows the client to discover available operations at runtime.
