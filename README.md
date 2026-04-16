@@ -164,3 +164,7 @@ Client-Side Simplicity:
 Clients can easily construct and modify query strings dynamically, making search functionality more convenient. 
 REST Best Practices:
 REST conventions recommend path parameters for resource identification and query parameters for filtering and searching. 
+
+### **Part 4 - Task 1 Question**
+
+#### _Answer:_
