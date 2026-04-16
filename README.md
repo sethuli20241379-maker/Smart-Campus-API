@@ -2,7 +2,7 @@
 RESTful API for the University’s "Smart Campus" initiative to manage Rooms and Sensors using JAX-RS. - CSA Coursework
 
 Part 1 - Task 1 Question
-Default Lifecycle of a JAX-RS Resource class and in-memory data structures
+Default Lifecycle of a JAX-RS Resource class and in-memory data structures.
 
 Answer:
 By default, in JAX-RS, resource classes are request-scoped. This means a new instance is created for each incoming request. This is to maintain the stateless 
@@ -25,3 +25,7 @@ access. You can also use synchronised blocks or Collections.synchronizedList() w
 ensures that only one thread can modify the collection at a time.
 
 Part 1 - Task 2 Question
+Why HyperMedia (HATEOAS) considered a hallmark of advanced RESTful design and how it benefits client developers.
+
+Answer:
+
