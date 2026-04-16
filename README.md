@@ -39,4 +39,8 @@ HATEOAS maybe considered a hallmark of advanced RESTful design because HATEOAS m
 decoupled (clients do not need to have prior knowledge of endpoint structures) and evolvable (the server can change URLS without breaking clients). 
 These characteristics and allowances align with a core REST principle which is loose coupling between client and server.
 
-
+Benefits of Hypermedia for client developers include reduced dependency on documentation (Clients can follow links provided in responses. 
+They do not need to memorise or hardcode endpoints.), improved maintainability (Clients continues to work as long as they follow links and not fixed paths 
+even if API structure changes.), simplified navigation (Developers can navigate through resources using links rather than constructing URLs manually, 
+treating the API like a web application.), and better discoverability (New features and endpoints can be introduced without needing immediate client update 
+because they will appear in responses.).
