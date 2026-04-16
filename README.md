@@ -166,5 +166,6 @@ REST Best Practices:
 REST conventions recommend path parameters for resource identification and query parameters for filtering and searching. 
 
 ### **Part 4 - Task 1 Question**
+Architectural benefits of the Sub-Resource Locator pattern and how its helps manage complexity.
 
 #### _Answer:_
