@@ -218,3 +218,7 @@ Exposing internal Java stack traces to API consumers poses considerable cybersec
 the system. These details can be used by attackers to better understand the internal structure of the system and identify and exploit potential 
 vulnerabilities.
 
+The risks include the following:
+1) Stack traces usually expose class names, package structures and method calls. This reveals how the application is organised and which components handle 
+which specific functionality, making it easier to target attacks.
+2) 
