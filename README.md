@@ -226,4 +226,5 @@ understand the operating system, server configuration or hosting environment, he
 3) Stack traces can reveal internal logic and potential weaknesses. Through examining the sequence of method calls, attackers can identify where errors occur 
 and infer flaws like poor input validation, null handling issues or unprotected operations. They can then lead targeted attacks like injection attacks 
 or denial-of-service attacks. 
-4) 
+4) Stack traces may also expose sensitive data like variable values, request parameters and partial credentials if included in exception messages. This could 
+lead to data leakage compromising system security. 
