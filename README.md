@@ -231,3 +231,7 @@ lead to data leakage compromising system security.
 
 Exposing stack traces also violates the principle of information hiding. It increases the system's attack surface, giving attack information that would have 
 otherwise require effort to discover. 
+
+### **Part 5 - Task 5 Question**
+
+#### _Answers:_
