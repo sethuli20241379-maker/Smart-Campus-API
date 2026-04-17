@@ -169,4 +169,5 @@ REST conventions recommend path parameters for resource identification and query
 Architectural benefits of the Sub-Resource Locator pattern and how its helps manage complexity.
 
 #### _Answer:_
-The Sub-Resource Locator pattern is a design approach in JAX-RS where a parent resource delegates the handling of nested paths to a separate resource class. A method returns another resource instance responsible for handling further request processing, instead of defining all endpoints in a single class.
+The Sub-Resource Locator pattern is a design approach in JAX-RS where a parent resource delegates the handling of nested paths to a separate resource class. 
+A method returns another resource instance responsible for handling further request processing, instead of defining all endpoints in a single class.
