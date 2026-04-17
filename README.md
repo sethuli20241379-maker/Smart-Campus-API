@@ -233,5 +233,6 @@ Exposing stack traces also violates the principle of information hiding. It incr
 otherwise require effort to discover. 
 
 ### **Part 5 - Task 5 Question**
+Why JAX-RS filters are preferred for cross-cutting concerns like logging.
 
 #### _Answers:_
