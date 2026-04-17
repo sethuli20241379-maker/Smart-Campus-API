@@ -209,3 +209,8 @@ cannot process it due to invalid semantic content.
 
 Therefore, HTTP 422 is more appropriate because it correctly reflects that the request is valid in structure but invalid in meaning. In short, a 404 indicates 
 the URI (address) is wrong and a 422 indicates the payload (the content) is wrong.
+
+### **Part 5 - Task 4 Question**
+Risks of exposing internal Java stack traces to external API consumers.
+
+#### _Answers:_
