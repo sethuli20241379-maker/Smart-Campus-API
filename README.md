@@ -206,3 +206,5 @@ cannot process it due to invalid semantic content.
 - The request format is correct, valid JSON
 - The request is understood by the server
 - But the request cannot be processed due to business rule violations or invalid references
+
+Therefore, HTTP 422 is more appropriate because it correctly reflects that the request is valid in structure but invalid in meaning.
