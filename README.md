@@ -228,3 +228,6 @@ and infer flaws like poor input validation, null handling issues or unprotected 
 or denial-of-service attacks. 
 4) Stack traces may also expose sensitive data like variable values, request parameters and partial credentials if included in exception messages. This could 
 lead to data leakage compromising system security. 
+
+Exposing stack traces also violates the principle of information hiding. It increases the system's attack surface, giving attack information that would have 
+otherwise require effort to discover. 
