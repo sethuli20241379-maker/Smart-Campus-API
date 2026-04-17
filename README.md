@@ -214,3 +214,7 @@ the URI (address) is wrong and a 422 indicates the payload (the content) is wron
 Risks of exposing internal Java stack traces to external API consumers.
 
 #### _Answers:_
+Exposing internal Java stack traces to API consumers poses considerable cybersecurity risks. This is because it reveals sensitive implementation details about 
+the system. These details can be used by attackers to better understand the internal structure of the system and identify and exploit potential 
+vulnerabilities.
+
