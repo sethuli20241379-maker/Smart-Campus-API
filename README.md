@@ -207,4 +207,5 @@ cannot process it due to invalid semantic content.
 - The request is understood by the server
 - But the request cannot be processed due to business rule violations or invalid references
 
-Therefore, HTTP 422 is more appropriate because it correctly reflects that the request is valid in structure but invalid in meaning.
+Therefore, HTTP 422 is more appropriate because it correctly reflects that the request is valid in structure but invalid in meaning. In short, a 404 indicates 
+the URI (address) is wrong and a 422 indicates the payload (the content) is wrong.
