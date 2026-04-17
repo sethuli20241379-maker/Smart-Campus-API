@@ -241,4 +241,6 @@ Using JAX-rs filters for cross-cutting concerns such as logging is advantageous 
 The following are the advantages:
 1) The filters provide separation of concerns. 
 Logging is not part of the core business logic of resource methods. By handling it in a dedicated filter, the resource classes remain focused only on their responsibilities, resulting in cleaner, more readable code.
-2) 
+2) The filters ensure centralised and consistent logging.
+Instead of manually inserting Logger.info() statements in every resource method, a single filter can automatically log all incoming requests and outgoing responses, guaranteeing logging is applied uniformly across the entire API, therby reducing the risk of missing logs in some endpoints.
+3) 
