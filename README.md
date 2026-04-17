@@ -238,3 +238,7 @@ Why JAX-RS filters are preferred for cross-cutting concerns like logging.
 #### _Answers:_
 Using JAX-rs filters for cross-cutting concerns such as logging is advantageous because it promotes cleaner architecture, better maintainability and consistent behaviour across the entire API.
 
+The following are the advantages:
+1) The filters provide separation of concerns. 
+Logging is not part of the core business logic of resource methods. By handling it in a dedicated filter, the resource classes remain focused only on their responsibilities, resulting in cleaner, more readable code.
+2) 
