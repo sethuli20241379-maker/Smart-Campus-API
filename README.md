@@ -179,9 +179,9 @@ Improves code organization and readability:
 Without the sub-resource locator approach, all nested endpoints will have to be defined in one large controller class. This would quickly become cluttered and 
 difficult to navigate and so by delegating to a separate class, the structure of the API is reflected clearly in the codebase.
 Enhances scalability and maintainability:
-As the API grows, new functionality related to, for example sensor readings, can be added directly to the relevant class, in this case the SensorReadingResource, 
-without modifying an unrelated class, for example the main SensorResource. This reduces the likelihood of introducing bugs into unrelated parts of the system 
-and makes future extensions easier.
+As the API grows, new functionality related to, for example sensor readings, can be added directly to the relevant class, in this case the 
+SensorReadingResource, without modifying an unrelated class, for example the main SensorResource. This reduces the likelihood of introducing bugs into 
+unrelated parts of the system and makes future extensions easier.
 Improves reusability and testability:
 Because sub-resources are independent classes, they can be tested in isolation. This allows for more focused unit testing and better code quality.
 Aligns with RESTful principles:
