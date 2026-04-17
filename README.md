@@ -194,3 +194,7 @@ In contrast, having all nested logic in a single large controller class leads to
 Why HTTP 422 is more semantically accurate than 404 for missing references inside a valid JSON payload.
 
 #### _Answer:_
+A 404 Not Found response indicates that the requested resources does not exist on the server. In this case, however, the endpoint is valid and accessible. 
+HTTP 422 Unprocessable Entity is considered more semantically accurate because the error does not relate to the requested endpoint itself but rather to the 
+content of the request payload. Returning a 404 in this case, therefore, would be misleading.
+
