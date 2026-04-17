@@ -221,4 +221,6 @@ vulnerabilities.
 The risks include the following:
 1) Stack traces usually expose class names, package structures and method calls. This reveals how the application is organised and which components handle 
 which specific functionality, making it easier to target attacks.
-2) 
+2) Stack traces may reveal file paths and server environment details like directory structure and deployment locations. This information helps attackers 
+understand the operating system, server configuration or hosting environment, helping them craft more precise attacks.
+3) 
