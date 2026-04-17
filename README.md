@@ -243,4 +243,9 @@ The following are the advantages:
 Logging is not part of the core business logic of resource methods. By handling it in a dedicated filter, the resource classes remain focused only on their responsibilities, resulting in cleaner, more readable code.
 2) The filters ensure centralised and consistent logging.
 Instead of manually inserting Logger.info() statements in every resource method, a single filter can automatically log all incoming requests and outgoing responses, guaranteeing logging is applied uniformly across the entire API, therby reducing the risk of missing logs in some endpoints.
-3) 
+3) The filters improve maintainability and scalability. 
+If logging requirements change, the update only needs to be made in one place. Manually logging across multiple resource methods, on the other hand, would be time-consuming and error-prone.
+4) The filters support cross-cutting functionality across all endpoints.
+This includes future ones. Any new resource added to the API will automatically be covered by the filter without requiring additional logging code. 
+
+Using filters also aligns with best practices in API design by avoiding code duplication. Repeating logging statements in every method leads to redundant code and increases the chance of inconsistencies. 
