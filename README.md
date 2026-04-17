@@ -191,5 +191,6 @@ making the API more intuitive for both developers and clients.
 In contrast, having all nested logic in a single large controller class leads to tight coupling, reduced clarity and increased maintenance difficulty. 
 
 ### **Part 5 - Task 2 Question**
+Why HTTP 422 is more semantically accurate than 404 for missing references inside a valid JSON payload.
 
 #### _Answer:_
