@@ -187,3 +187,4 @@ Because sub-resources are independent classes, they can be tested in isolation. 
 Aligns with RESTful principles:
 RESTful principles treat resources as hierarchical entities. The URL structure is naturally mapped to a corresponding object structure in the code, making the API more intuitive for both developers and clients.
 
+In contrast, having all nested logic in a single large controller class leads to tight coupling, reduced clarity and increased maintenance difficulty. 
