@@ -201,3 +201,8 @@ content of the request payload. Returning a 404 in this case, therefore, would b
 Here, the issue arises from the client's submitted data. The request body is syntactically correct JSON and can be parsed successfully, but it contains a 
 logical error. For example, the roomId provided does not correspond to any existing room in the system. This means the server understands the request but 
 cannot process it due to invalid semantic content. 
+
+422 Unprocessable Entity is designed for when:
+- The request format is correct, valid JSON
+- The request is understood by the server
+- But the request cannot be processed due to business rule violations or invalid references
