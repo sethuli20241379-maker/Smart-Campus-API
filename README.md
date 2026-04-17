@@ -171,3 +171,7 @@ Architectural benefits of the Sub-Resource Locator pattern and how its helps man
 #### _Answer:_
 The Sub-Resource Locator pattern is a design approach in JAX-RS where a parent resource delegates the handling of nested paths to a separate resource class. 
 A method returns another resource instance responsible for handling further request processing, instead of defining all endpoints in a single class.
+
+The benefits of this approach include:
+Promotes separation of concerns:
+Each resource class is responsible for a specific part of the API. This keeps each class focused, making the code easier to understand and maintain. 
