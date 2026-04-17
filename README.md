@@ -223,4 +223,7 @@ The risks include the following:
 which specific functionality, making it easier to target attacks.
 2) Stack traces may reveal file paths and server environment details like directory structure and deployment locations. This information helps attackers 
 understand the operating system, server configuration or hosting environment, helping them craft more precise attacks.
-3) 
+3) Stack traces can reveal internal logic and potential weaknesses. Through examining the sequence of method calls, attackers can identify where errors occur 
+and infer flaws like poor input validation, null handling issues or unprotected operations. They can then lead targeted attacks like injection attacks 
+or denial-of-service attacks. 
+4) 
