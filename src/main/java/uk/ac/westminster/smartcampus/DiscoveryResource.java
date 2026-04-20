@@ -31,4 +31,12 @@ public class DiscoveryResource {
 
         return Response.ok(metadata).build();
     }
+
+    /*
+    @GET
+    @Path("trigger-error)
+    public Response triggerError() {
+        throw new RuntimeException("Unexpected system failure!");
+    }
+    */
 }
